@@ -174,7 +174,14 @@
             font-size: 1.8rem; /* Tamanho do ícone do WhatsApp */
             margin-right: 10px;
         }
-
+        @media (min-height: 900px) and (max-height: 1024px) {
+            .show-if-tall {
+                display: block !important;
+            }
+        }
+        .show-if-tall {
+            display: none;
+        }
         /* Media query para telas menores, ajusta o tamanho do botão */
         @media (max-width: 640px) {
             .whatsapp-float-button {
@@ -230,7 +237,7 @@
         <!-- Mobile-only image positioned absolutely at bottom and further left -->
         <!-- Usando valor 'left' negativo para empurrá-lo para fora da tela à esquerda, e largura maior -->
         <div class="absolute bottom-0 -left-[40vw] z-10 block md:hidden animate-fadeIn" style="animation-delay: 0.2s;">
-            <img src="images/Fabio_cavalcanti_background_image.png" alt="Foto do Nutricionista Fábio Cavalcanti" class="w-[120vw] h-[75vh] object-cover rounded-md">
+            <img src="images/Fabio_cavalcanti_background_image.png" alt="Foto do Nutricionista Fábio Cavalcanti" class="w-[140vw] h-[95vh] object-cover rounded-md">
         </div>
 
         <!-- Contêiner principal para o conteúdo (texto/botões e foto desktop) -->
@@ -241,7 +248,7 @@
                 <img 
                 src="images/Fabio_cavalcanti_background_image.png" 
                 alt="Foto do Nutricionista Fábio Cavalcanti" 
-                class="absolute bottom-0 w-[120vw] h-[95vh] object-cover rounded-md animate-fadeIn"
+                class="absolute bottom-0 w-[120vw] h-[115vh] object-cover rounded-md animate-fadeIn"
                 style="animation-delay: 0.2s;"
                 >
             </div>
@@ -262,19 +269,27 @@
                     Cuide do seu corpo, mente e bem-estar com o suporte de um profissional que entende suas necessidades e 
                     te acompanha em cada passo da jornada.
                 </p>
-                <p class="text-lg md:text-xl mb-8 animate-fadeIn" style="animation-delay: 0.4s;">
+                <p class="text-lg md:text-xl mb-8 animate-fadeIn md:hidden" style="animation-delay: 0.4s;">
+
+                </p>
+                <p class="text-lg md:text-xl mb-8 animate-fadeIn md:hidden" style="animation-delay: 0.4s;">
                     
                 </p>
-                    <p class="text-lg md:text-xl mb-8 animate-fadeIn" style="animation-delay: 0.4s;">
+                <!-- 900+ height -->
+                <p class="text-lg md:text-xl mb-8 animate-fadeIn show-if-tall" style="animation-delay: 0.4s;">
+                </p>
+                <p class="text-lg md:text-xl mb-8 animate-fadeIn show-if-tall" style="animation-delay: 0.4s;">
+                </p>
+                <p class="text-lg md:text-xl mb-8 animate-fadeIn show-if-tall" style="animation-delay: 0.4s;">
+                </p>
+
+                <p class="text-lg md:text-xl mb-8 animate-fadeIn md:hidden" style="animation-delay: 0.4s;">
                     
                 </p>
-                <p class="text-lg md:text-xl mb-8 animate-fadeIn" style="animation-delay: 0.4s;">
+                <p class="text-lg md:text-xl mb-8 animate-fadeIn md:hidden" style="animation-delay: 0.4s;">
                     
                 </p>
-                <p class="text-lg md:text-xl mb-8 animate-fadeIn" style="animation-delay: 0.4s;">
-                    
-                </p>
-                <p class="text-lg md:text-xl mb-8 animate-fadeIn" style="animation-delay: 0.4s;">
+                <p class="text-lg md:text-xl mb-8 animate-fadeIn md:hidden" style="animation-delay: 0.4s;">
                     
                 </p>
                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-12 hero-buttons-container">
@@ -535,7 +550,7 @@
             const body = `Nome: ${name}\nE-mail: ${email}\nTelefone: ${phone}\nMensagem: ${message}`;
 
             // Abre o cliente de e-mail padrão do usuário
-            window.location.href = `mailto:seu.email@exemplo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = `mailto:nutrifabiocavalcanti@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
             // Opcional: Limpar o formulário após a tentativa de envio
             this.reset();
